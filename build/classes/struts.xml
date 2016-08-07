@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="a" extends="struts-default">
+		<action name="loginCheck" class="users.LoginAction" method="validLogin">
+			<result name="success">/emails.jsp</result>
+			<result name="none">/lfail.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+
+		<action name="deleteEmail" class="users.LoginAction" method="deleteEmail">
+			<result name="ok">/emails.jsp</result>
+		</action>
+
+		<action name="refresh" class="users.LoginAction" method="refresh">
+			<result name="ok">/emails.jsp</result>
+		</action>
+
+		<action name="trashEmail" class="users.LoginAction" method="trashEmail">
+			<result name="ok">/emails.jsp</result>
+		</action>
+
+		<action name="register" class="users.User">
+			<result name="ok">/register_ok.jsp</result>
+			<result name="error">/registerfail.jsp</result>
+		</action>
+
+
+		<action name="userview" class="users.UserViewAction">
+			<result name="ok">/view.jsp</result>
+			<result name="fail">/invalidSession.jsp</result>
+		</action>
+
+		<action name="editprofile" class="users.LoginAction" method="updateProfile">
+			<result name = "ok">/emails.jsp</result>
+			<!-- <result name = "error">/emails.jsp</result> -->
+		</action>
+
+		<action name="sendEmail" class="users.LoginAction" method="sendEmail">
+			<result name="ok">/emails.jsp</result>
+			<result name="fail">/emailFail.jsp</result>
+			<result name="input">/emails.jsp</result>
+		</action>
+
+		<action name="logout" class="users.LoginAction" method="logout">
+			<result name="success">/logout.jsp</result>
+		</action>
+
+	</package>
+
+</struts>
+
